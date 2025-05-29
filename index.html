@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Científica - Proyecto PWD</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="modo-claro">
+    <div class="contenedor">
+        <header>
+            <h1>Calculadora Científica</h1>
+            <div class="controles">
+                <button id="botonTema"><i class="fas fa-moon"></i></button>
+                <button id="botonMusica"><i class="fas fa-music"></i></button>
+                <div class="volumen-control">
+                    <input type="range" id="volumen" min="0" max="1" step="0.1" value="0.5">
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="calculadora">
+                <div class="pantalla" id="pantalla">0</div>
+                
+                <div class="historial" id="historial">
+                    <h3>Historial</h3>
+                    <div id="listaHistorial"></div>
+                    <button id="borrarHistorial">Borrar historial</button>
+                </div>
+                
+                <div class="botones">
+                    <!-- fila 1 - botones cientificos -->
+                    <button class="boton cientifico" data-valor="sin(">sin</button>
+                    <button class="boton cientifico" data-valor="cos(">cos</button>
+                    <button class="boton cientifico" data-valor="tan(">tan</button>
+                    <button class="boton cientifico" data-valor="log(">log</button>
+                    <button class="boton cientifico" data-valor="ln(">ln</button>
+                    
+                    <!-- fila 2 -->
+                    <button class="boton cientifico" data-valor="(">( </button>
+                    <button class="boton cientifico" data-valor=")">)</button>
+                    <button class="boton cientifico" data-valor="Math.PI">π</button>
+                    <button class="boton cientifico" data-valor="Math.E">e</button>
+                    <button class="boton operacion" data-valor="%">%</button>
+                    
+                    <!-- fila 3 -->
+                    <button class="boton cientifico" data-valor="sqrt(">√</button>
+                    <button class="boton cientifico" data-valor="**2">x²</button>
+                    <button class="boton cientifico" data-valor="**3">x³</button>
+                    <button class="boton cientifico" data-valor="**">x^y</button>
+                    <button class="boton operacion" data-valor="/">/</button>
+                    
+                    <!-- fila 4 -->
+                    <button class="boton numero" data-valor="7">7</button>
+                    <button class="boton numero" data-valor="8">8</button>
+                    <button class="boton numero" data-valor="9">9</button>
+                    <button class="boton limpiar" data-valor="C">C</button>
+                    <button class="boton operacion" data-valor="*">×</button>
+                    
+                    <!-- fila 5 -->
+                    <button class="boton numero" data-valor="4">4</button>
+                    <button class="boton numero" data-valor="5">5</button>
+                    <button class="boton numero" data-valor="6">6</button>
+                    <button class="boton limpiar" data-valor="CE">CE</button>
+                    <button class="boton operacion" data-valor="-">-</button>
+                    
+                    <!-- fila 6 -->
+                    <button class="boton numero" data-valor="1">1</button>
+                    <button class="boton numero" data-valor="2">2</button>
+                    <button class="boton numero" data-valor="3">3</button>
+                    <button class="boton" data-valor="."">.</button>
+                    <button class="boton operacion" data-valor="+">+</button>
+                    
+                    <!-- fila 7 -->
+                    <button class="boton numero" data-valor="0">0</button>
+                    <button class="boton numero" data-valor="00">00</button>
+                    <button class="boton" data-valor="ANS">ANS</button>
+                    <button class="boton igual" data-valor="=">=</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Hecho por Fernandez Devicenzi Franco de 7° 2° | EEST N°1 "Eduardo Ader" | 2025</p>
+        </footer>
+    </div>
+
+    <!-- sonidos -->
+    <audio id="sonidoTecla" src="https://www.soundjay.com/misc/sounds/calculator-2.mp3"></audio>
+    <audio id="sonidoError" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+    <audio id="musicaFondo" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

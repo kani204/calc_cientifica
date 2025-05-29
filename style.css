@@ -1,0 +1,225 @@
+:root {
+    /* variables para modo claro */
+    --color-fondo: #f0f2f5;
+    --color-calculadora: #ffffff;
+    --color-botones: #e9ecef;
+    --color-texto: #333333;
+    --color-operaciones: #ff9500;
+    --color-igual: #2ecc71;
+    --color-cientifico: #74b9ff;
+    --color-borrar: #ff7675;
+    --sombra: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modo-oscuro {
+    /* variables para modo oscuro */
+    --color-fondo: #121212;
+    --color-calculadora: #1e1e1e;
+    --color-botones: #2d2d2d;
+    --color-texto: #ffffff;
+    --color-operaciones: #ff9500;
+    --color-igual: #2ecc71;
+    --color-cientifico: #0984e3;
+    --color-borrar: #d63031;
+    --sombra: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    transition: all 0.3s ease;
+}
+
+.contenedor {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.controles {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controles button {
+    border: none;
+    background: var(--color-botones);
+    color: var(--color-texto);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    transition: transform 0.2s;
+}
+
+.controles button:hover {
+    transform: scale(1.1);
+}
+
+.volumen-control {
+    display: flex;
+    align-items: center;
+}
+
+input[type="range"] {
+    width: 80px;
+}
+
+.calculadora {
+    background-color: var(--color-calculadora);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: var(--sombra);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.pantalla {
+    background-color: var(--color-botones);
+    color: var(--color-texto);
+    padding: 15px;
+    text-align: right;
+    font-size: 28px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    min-height: 60px;
+}
+
+.historial {
+    background-color: var(--color-botones);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.historial h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#listaHistorial {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+#listaHistorial p {
+    margin: 3px 0;
+}
+
+#borrarHistorial {
+    background-color: var(--color-borrar);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.botones {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.boton {
+    border: none;
+    background-color: var(--color-botones);
+    color: var(--color-texto);
+    padding: 15px 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.boton:hover {
+    transform: scale(1.05);
+}
+
+.boton:active {
+    transform: scale(0.95);
+}
+
+.cientifico {
+    background-color: var(--color-cientifico);
+    color: white;
+}
+
+.operacion {
+    background-color: var(--color-operaciones);
+    color: white;
+}
+
+.igual {
+    background-color: var(--color-igual);
+    color: white;
+    grid-column: span 2;
+}
+
+.limpiar {
+    background-color: var(--color-borrar);
+    color: white;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--color-texto);
+    opacity: 0.7;
+}
+
+/* responsive */
+@media screen and (max-width: 600px) {
+    .calculadora {
+        padding: 10px;
+    }
+    
+    .botones {
+        gap: 5px;
+    }
+    
+    .boton {
+        padding: 10px 5px;
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .botones {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .igual {
+        grid-column: span 2;
+    }
+}
